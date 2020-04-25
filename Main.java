@@ -1,7 +1,7 @@
 package td2dat;
 
 public class Main {
-	public static void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception{		
 		
 		if (args.length !=2) {
 			System.out.println("Wrong number of arguments");
@@ -11,5 +11,6 @@ public class Main {
 			TD2DAT td = new TD2DAT();
 			td.getAndWriteData(pathToInit, pathToRes);
 		}
+
 	}
 }
