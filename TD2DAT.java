@@ -37,7 +37,7 @@ public class TD2DAT {
 					l++;
 					continue;
 				} else {
-					fw.write(String.format("%.3f %s %s %s %s\n", 
+					fw.write(String.format(Locale.ENGLISH, "%.3f %s %s %s %s\n", 
 							convertToGPSTime(simpleDateFormat.parse(line[0])),
 							line[0], line[1].replaceAll(" ", ""), line[2].replaceAll(" ", ""),
 							line[3].replaceAll(" ", "")));
@@ -51,9 +51,8 @@ public class TD2DAT {
 		}	
 	}
 	
-	
 	// convert date object to gps time
 	public double convertToGPSTime(Date date) {
-		return ((double)(date.getTime() - initGPS.getTime()))/1000 + 18; // при пересчёте почему-то всегда возникает ошибка в 18 секунд
+		return ((double)(date.getTime() - initGPS.getTime()))/1000 + 18; // convert Date object to GPS time
 	}
 }
